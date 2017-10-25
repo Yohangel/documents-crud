@@ -1,0 +1,39 @@
+<div class="breadcrumb">
+        <div class="col-md-11">
+            <h1>Detalles de documento</h1>
+        </div>
+        <div class="col-md-1">
+            <p><a class="btn btn-danger" href="#/login">Salir</a></p>
+        </div>
+</div>
+<div class="container">
+    <a href="#/detail/new/{{id_father}}" class="btn btn-primary" style="margin-bottom:10px;">Nuevo detalle</a>
+    <a href="javascript:void(0)" ng-click="go_back()" class="btn btn-danger" style="margin-bottom:10px;">Volver</a>
+    <div class="row" id="exportthis">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Unidades</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col"><a href="javascript:void(0)" ng-click="export()" class="btn btn-primary">Imprimir</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat=" detail in details " ng-init= "setTotals(detail) ">
+                    <td>{{ detail.id }}</td>
+                    <td>{{ detail.unit }}</td>
+                    <td>{{ detail.price }}</td>
+                    <td>{{ detail.quantity }}</td>
+                    <td>{{ detail.subtotal }}</td>
+                    <td>{{ detail.description }}</td>
+                    <td><a href="#/detail/edit/{{ detail.id }}">Editar</a> <a href="#/detail/delete/{{ detail.id }}">Eliminar</a></td>
+                </tr>
+                <tr><td><b>Precio total:</b> {{ total }}</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

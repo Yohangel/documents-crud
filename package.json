@@ -1,0 +1,24 @@
+{
+  "name": "documents-crud",
+  "version": "1.0.0",
+  "description": "Documents crud by Yohangel Ramos",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yohangel Ramos",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "moment": "^2.18.1",
+    "express-session": "^1.11.3",
+    "mysql": "^2.7.0",
+    "jwt-simple": "^0.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

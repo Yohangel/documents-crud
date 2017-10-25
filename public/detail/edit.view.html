@@ -1,0 +1,51 @@
+<div class="breadcrumb">
+        <div class="col-md-11">
+            <h1>Editar detalle</h1>
+        </div>
+        <div class="col-md-1">
+            <p><a class="btn btn-danger" href="#/login">Salir</a></p>
+        </div>
+    </div>
+    <div class="container">
+        <a href="javascript:void(0)" ng-click="go_back()" class="btn btn-dark" style="margin-bottom:10px;">Volver</a>
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <form name="form" ng-submit="form.$valid && vm.newdetail()" novalidate>
+                    <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.unit.$invalid }">
+                        <label for="folo">Unidad medida</label>
+                        <input type="text" name="unit" class="form-control" ng-model="vm.details.unit" required />
+                        <div ng-messages="form.$submitted && form.unit.$error" class="help-block">
+                            <div ng-message="required">La unidad medida es requerida</div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.price.$invalid }">
+                        <label for="folo">Precio</label>
+                        <input type="text" name="price" class="form-control" ng-model="vm.details.price" required />
+                        <div ng-messages="form.$submitted && form.price.$error" class="help-block">
+                            <div ng-message="required">El precio es requerido</div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.quantity.$invalid }">
+                        <label for="folo">Cantidad</label>
+                        <input type="text" name="quantity" class="form-control" ng-model="vm.details.quantity" required />
+                        <div ng-messages="form.$submitted && form.quantity.$error" class="help-block">
+                            <div ng-message="required">La cantidad es requerida</div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.description.$invalid }">
+                        <label for="folo">Descripción</label>
+                        <input type="text" name="description" class="form-control" ng-model="vm.details.description" required />
+                        <div ng-messages="form.$submitted && form.description.$error" class="help-block">
+                            <div ng-message="required">La descripción es requerida</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button ng-disabled="vm.loading" class="btn btn-primary">Enviar</button>
+                        <img ng-if="vm.loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                        />
+                    </div>
+                    <div ng-if="vm.error" class="alert alert-danger">{{vm.error}}</div>
+                </form>
+            </div>
+        </div>
+    </div>

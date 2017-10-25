@@ -1,0 +1,35 @@
+<div class="breadcrumb">
+        <div class="col-md-11">
+            <h1>Lista de Documentos</h1>
+        </div>
+        <div class="col-md-1">
+            <p><a class="btn btn-danger" href="#/login">Salir</a></p>
+        </div>
+</div>
+<div class="container">
+    <a href="#/document/new" class="btn btn-primary" style="margin-bottom:10px;">Nuevo documento</a>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Folio</th>
+                    <th scope="col">Nombre del comprador</th>
+                    <th scope="col">Total</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat=" document in documents ">
+                    <td><a href="#/details/{{ document.id }}">{{ document.id }}</a></td>
+                    <td ng-bind="document.date | date: 'dd/MM/yyyy'"></td>
+                    <td>{{ document.folio }}</td>
+                    <td>{{ document.buyer }}</td>
+                    <td>{{ document.total }}</td>
+                    <td><a href="#/details/{{ document.id }}">Ver</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
